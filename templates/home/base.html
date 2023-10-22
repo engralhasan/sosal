@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} limupa {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+    <link rel="stylesheet" href="{% static 'video/style.css' %}">
+    <link rel="stylesheet" href="{% static 'home/css.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{% static 'home/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <nav style="background: #000;">
+        <div class="naf-left">
+            <img src="{% static 'home/images/logoc.png ' %}" class="logo">
+            <ul>
+                <a href="#">
+                    <li><img src="{% static 'home/images/notification.png ' %}" alt="notification.png ' %}"></li>
+                </a>
+
+                <a href="#">
+                    <li><img src="{% static 'home/images/inbox.png ' %}" alt="notification.png ' %}"></li>
+                </a>
+
+                <a href="{% url 'video' %}">
+                    <li><img src="{% static 'home/images/video.png ' %}" alt="notification.png ' %}"></li>
+                </a>
+
+            </ul>
+        </div>
+
+        <div class="naf-right">
+            <div class="search-box">
+                <img src="{% static 'home/images/search.png ' %}" alt="search.png ' %}">
+                <input type="text" placeholder="Search">
+            </div>
+
+            <div class="nav-user-icon online" onclick="settingMenuToggle()">
+                <a href="#"><img src="{% static 'home/images/profile-pic.png ' %}" alt="profile-pic.png ' %}"></a>
+            </div>
+        </div>
+        <!--------------settings-menu------->
+
+        <div class="settings_menu">
+
+            <div id="dark-btn">
+                <span></span>
+            </div>
+
+
+            <div class="setting-menu-inner">
+                <div class="user-profile">
+                    <a href="{% url 'profileShow' %}">
+                        <img src="{% static 'home/images/profile-pic.png ' %}" alt="profile">
+                        <div class="">
+                            <p>John Nicholson</p>
+                            <a href="#"> See Your profile</a>
+                        </div>
+                    </a>
+                </div>
+                <hr>
+                <div class="user-profile">
+                    <img src="{% static 'home/images/feedback.png ' %}" alt="profile">
+                    <div class="">
+                        <p>Give Feedbac</p>
+                        <a href="#"> Help us to improve the new design</a>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="settungs-link">
+                    <img src="{% static 'home/images/setting.png ' %}" class="setting-icon">
+                    <a href="{% url 'resetpassword'%}">Setting & Privacy <img src="{% static 'home/images/arrow.png ' %}" width="10px">
+                        
+                    </a>
+                </div>
+                <div class="settungs-link">
+                    <img src="{% static 'home/images/help.png ' %}" class="setting-icon">
+                    <a href="#">Help & Support <img src="{% static 'home/images/arrow.png ' %}" width="10px"></a>
+                </div>
+                <div class="settungs-link">
+                    <img src="{% static 'home/images/display.png ' %}" class="setting-icon">
+                    <a href="#">Display & Accessibility <img src="{% static 'home/images/arrow.png ' %}"
+                            width="10px"></a>
+                </div>
+                <div class="settungs-link">
+                    <img src="{% static 'home/images/logout.png ' %}" class="setting-icon">
+                    <a href="{% url 'signout' %}">Logout <img src="{% static 'home/images/arrow.png ' %}"
+                            width="10px"></a>
+                </div>
+            </div>
+
+    </nav>
+    {% block body %}
+    <h1> Base Page </h1>
+    {% endblock %}
+    <div class="footer">
+        <p>Copyright 2023 - Al Hasan </p>
+    </div>
+
+
+    <script src="{% static 'home/script.js' %}"></script>
+    <script src="{% static 'video/script.js' %}"></script>
+     
+
+    
+</body>
+
+</html>

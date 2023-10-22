@@ -1,0 +1,335 @@
+{% extends './base.html' %}
+{% load static %}
+{% block title %} Profile Page {% endblock %}
+{% block body %}
+
+    <!-- profile pase  -->
+
+  <form action="#" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="profile-container">
+        <img style="max-height: 400px;" src="{{prof.coverimg.url}}" class="cover-img">
+        
+        <input type="file" name="coverimg">
+        <div class="profile_details">
+            <div class="pd-left">
+                <div class="pd_row">
+                    <img style="max-height: 100px; width:100px" src="{{prof.profimg.url}}" class="cover-img">
+        
+        <input type="file" name="profimg">
+                    <div class="protit">
+                        
+                        <input type="text" value="{{prof.name}}" name="name" placeholder="Enter Your Email" required>
+                        <p>120 Friends - <span>20 mutual</span></p>
+                        <img src="{% static 'home/images/member-1.png ' %}">
+                        <img src="{% static 'home/images/member-2.png ' %}">
+                        <img src="{% static 'home/images/member-3.png ' %}">
+                        <img src="{% static 'home/images/member-4.png ' %}">
+                    </div>
+                </div>
+            </div>
+            <div class="pd-right">
+                <a href="" style="text-decoration: none;padding: 1px;"><button type="button"><img src="{% static 'home/images/add-friends.png ' %}">Add Friend</button></a>
+                <a href="" style="text-decoration: none;padding: 1px;"><button type="button"><img src="{% static 'home/images/message.png ' %}"> Message</button></a>
+                <a href="" style="text-decoration: none;padding: 1px;"><button type="submit"><img src="{% static 'home/images/message.png ' %}"> Save Profile</button></a>
+                <br>
+                <a href=""> <img src="{% static 'home/images/more.png ' %}"></a>
+            </div>
+        </div>
+        
+
+        <div class="profile-info">
+            <div class="info-col">
+                <div class="profile-intro">
+                    <h3>Intro</h3>
+                    <p class="intri-text">Belive in yourself and you can do unbelievable things <img
+                            src="{% static 'home/images/feeling.png ' %}"> </p>
+                    <hr>
+                    <ul>
+                        <li><img src="{% static 'home/images/profile-job.png ' %}"> </li>
+                        <input type="text" value="{{prof.job}}" name="job" placeholder="Enter Your Job title">
+                        <li><img src="{% static 'home/images/profile-study.png ' %}"> </li>
+                        <input type="text" value="{{prof.univarName}}" name="univarName" placeholder="Enter your Collage or univarciti name">
+                        <li><img src="{% static 'home/images/profile-study.png ' %}"> </li>
+                        <input type="text" value="{{prof.scholnam}}" name="scholnam" placeholder="Enter your School name">
+                        <li><img src="{% static 'home/images/profile-home.png ' %}"> </li>
+                        <input type="text" value="{{prof.liveName}}" name="liveName" placeholder="Enter your Live cuntry" >
+                        <li><img src="{% static 'home/images/profile-location.png ' %}">  </li>
+                        <input type="text" value="{{prof.fromName}}" name="fromName" placeholder="Enter your Home Distik">
+                    </ul>
+                </div>
+                <div class="profile-intro">
+                    <div class="title-box">
+                        <h3>Photo</h3>
+                        <a href="">All Photo</a>
+                    </div>
+
+                    <div class="photo-box">
+                        <div><img src="{% static 'home/images/photo1.png ' %}"></div>
+                        <div><img src="{% static 'home/images/photo2.png ' %}"></div>
+                        <div><img src="{% static 'home/images/photo3.png ' %}"></div>
+                        <div><img src="{% static 'home/images/photo4.png ' %}"></div>
+                        <div><img src="{% static 'home/images/photo5.png ' %}"></div>
+                        <div><img src="{% static 'home/images/photo6.png ' %}"></div>
+                    </div>
+                </div>
+                <div class="profile-intro">
+                    <div class="title-box">
+                        <h3>Friends</h3>
+                        <a href="">All Friends</a>
+                    </div>
+                    <p>120(10 mutual)</p>
+
+                    <div class="friends-box">
+                        <div><img src="{% static 'home/images/member-1.png ' %}"> <p>Lorem ipsum</p></div>
+                        <div><img src="{% static 'home/images/member-2.png ' %}"><p>Lorem ipsum</p></div>
+                        <div><img src="{% static 'home/images/member-3.png ' %}"><p>Lorem ipsum</p></div>
+                        <div><img src="{% static 'home/images/member-4.png ' %}"><p>Lorem ipsum</p></div>
+                        <div><img src="{% static 'home/images/member-5.png ' %}"><p>Lorem ipsum</p></div>
+                        <div><img src="{% static 'home/images/member-6.png ' %}"><p>Lorem ipsum</p></div>
+                        <div><img src="{% static 'home/images/member-7.png ' %}"><p>Lorem ipsum</p></div>
+                        <div><img src="{% static 'home/images/member-8.png ' %}"><p>Lorem ipsum</p></div>
+                        <div><img src="{% static 'home/images/member-9.png ' %}"><p>Lorem ipsum</p></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="post-col">
+                <div class="write-post-continaer">
+                    <div class="user-profile">
+                        <img src="{% static 'home/images/profile-pic.png ' %}" alt="profile">
+                        <div class="">
+                            <p>John Nicholson</p>
+                            <small>Public <i class="fas fa-caret-down"></i> </small>
+                        </div>
+                    </div>
+
+                    <div class="post-input-continar">
+                        <textarea rows="3" placeholder="What's on mind, John? "></textarea>
+
+
+                        <div class="add-post-link">
+                            <a href="#"> <img src="{% static 'home/images/live-video.png ' %}" alt="video">Live Video</a>
+
+                            <a href="#"> <img src="{% static 'home/images/photo.png ' %}" alt="video">photo/video</a>
+
+                            <a href="#"> <img src="{% static 'home/images/feeling.png ' %}" alt="video">Feling/Activty</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-continar">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img src="{% static 'home/images/profile-pic.png ' %}" alt="profile">
+                            <div>
+                                <p>John Nicholson</p>
+                                <span> June 15 2021, 13:40 pm</span>
+                            </div>
+                        </div>
+                        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+
+                    </div>
+
+                    <p class="post-text"> Lorem ipsum <span>@dolor</span> sit amet consectetur adipisicing elit. Tempora
+                        sequi iure, adipisci voluptatum provident? <a href="#">#EasyTutorials</a> <a
+                            href="#">#YouTubeChannel</a></p>
+                    <img src="{% static 'home/images/feed-image-1.png ' %}" alt="feed" class="post-img">
+
+
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div> <img src="{% static 'home/images/like-blue.png ' %}" alt="like-blue">120</div>
+                            <div> <img src="{% static 'home/images/comments.png ' %}" alt="like-blue">145</div>
+                            <div> <img src="{% static 'home/images/share.png ' %}" alt="like-blue">20</div>
+
+                        </div>
+                        <div class="post-profile-icon">
+                            <img src="{% static 'home/images/profile-pic.png ' %}" alt="profile"><i class="fas fa-caret-down"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="post-continar">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img src="{% static 'home/images/profile-pic.png ' %}" alt="profile">
+                            <div>
+                                <p>John Nicholson</p>
+                                <span> June 15 2021, 13:40 pm</span>
+                            </div>
+                        </div>
+                        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+
+                    </div>
+
+                    <p class="post-text"> Lorem ipsum <span>@dolor</span> Non a sunt id magnam corrupti, voluptatem
+                        consequuntur provident saepe cum ducimus nostrum. Veritatis fuga sequi tempore! <a
+                            href="#">#EasyTutorials</a> <a href="#">#YouTubeChannel</a></p>
+                    <img src="{% static 'home/images/feed-image-2.png ' %}" alt="feed" class="post-img">
+
+
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div> <img src="{% static 'home/images/like.png ' %}" alt="like-blue">120</div>
+                            <div> <img src="{% static 'home/images/comments.png ' %}" alt="like-blue">145</div>
+                            <div> <img src="{% static 'home/images/share.png ' %}" alt="like-blue">20</div>
+
+                        </div>
+                        <div class="post-profile-icon">
+                            <img src="{% static 'home/images/profile-pic.png ' %}" alt="profile"><i class="fas fa-caret-down"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="post-continar">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img src="{% static 'home/images/profile-pic.png ' %}" alt="profile">
+                            <div>
+                                <p>John Nicholson</p>
+                                <span> June 15 2021, 13:40 pm</span>
+                            </div>
+                        </div>
+                        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+
+                    </div>
+
+                    <p class="post-text"> Lorem ipsum <span>@dolor</span> sit amet consectetur adipisicing elit. Tempora
+                        sequi iure, adipisci voluptatum provident? <a href="#">#EasyTutorials</a> <a
+                            href="#">#YouTubeChannel</a></p>
+                    <img src="{% static 'home/images/feed-image-3.png ' %}" alt="feed" class="post-img">
+
+
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div> <img src="{% static 'home/images/like-blue.png ' %}" alt="like-blue">120</div>
+                            <div> <img src="{% static 'home/images/comments.png ' %}" alt="like-blue">145</div>
+                            <div> <img src="{% static 'home/images/share.png ' %}" alt="like-blue">20</div>
+
+                        </div>
+                        <div class="post-profile-icon">
+                            <img src="{% static 'home/images/profile-pic.png ' %}" alt="profile"><i class="fas fa-caret-down"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="post-continar">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img src="{% static 'home/images/profile-pic.png ' %}" alt="profile">
+                            <div>
+                                <p>John Nicholson</p>
+                                <span> June 15 2021, 13:40 pm</span>
+                            </div>
+                        </div>
+                        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+
+                    </div>
+
+                    <p class="post-text"> Lorem ipsum <span>@dolor</span> sit amet consectetur adipisicing elit. Tempora
+                        sequi iure, adipisci voluptatum provident? <a href="#">#EasyTutorials</a> <a
+                            href="#">#YouTubeChannel</a></p>
+                    <img src="{% static 'home/images/feed-image-4.png ' %}" alt="feed" class="post-img">
+
+
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div> <img src="{% static 'home/images/like-blue.png ' %}" alt="like-blue">120</div>
+                            <div> <img src="{% static 'home/images/comments.png ' %}" alt="like-blue">145</div>
+                            <div> <img src="{% static 'home/images/share.png ' %}" alt="like-blue">20</div>
+
+                        </div>
+                        <div class="post-profile-icon">
+                            <img src="{% static 'home/images/profile-pic.png ' %}" alt="profile"><i class="fas fa-caret-down"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="post-continar">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img src="{% static 'home/images/profile-pic.png ' %}" alt="profile">
+                            <div>
+                                <p>John Nicholson</p>
+                                <span> June 15 2021, 13:40 pm</span>
+                            </div>
+                        </div>
+                        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+
+                    </div>
+
+                    <p class="post-text"> Lorem ipsum <span>@dolor</span> sit amet consectetur adipisicing elit. Tempora
+                        sequi iure, adipisci voluptatum provident? <a href="#">#EasyTutorials</a> <a
+                            href="#">#YouTubeChannel</a></p>
+                    <img src="{% static 'home/images/feed-image-5.png ' %}" alt="feed" class="post-img">
+
+
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div> <img src="{% static 'home/images/like-blue.png ' %}" alt="like-blue">120</div>
+                            <div> <img src="{% static 'home/images/comments.png ' %}" alt="like-blue">145</div>
+                            <div> <img src="{% static 'home/images/share.png ' %}" alt="like-blue">20</div>
+
+                        </div>
+                        <div class="post-profile-icon">
+                            <img src="{% static 'home/images/profile-pic.png ' %}" alt="profile"><i class="fas fa-caret-down"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="post-continar">
+                    <div class="post-row">
+                        <div class="user-profile">
+                            <img src="{% static 'home/images/profile-pic.png ' %}" alt="profile">
+                            <div>
+                                <p>John Nicholson</p>
+                                <span> June 15 2021, 13:40 pm</span>
+                            </div>
+                        </div>
+                        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+
+                    </div>
+
+                    <p class="post-text"> Lorem ipsum <span>@dolor</span> sit amet consectetur adipisicing elit. Tempora
+                        sequi iure, adipisci voluptatum provident? <a href="#">#EasyTutorials</a> <a
+                            href="#">#YouTubeChannel</a></p>
+                    <img src="{% static 'home/images/feed-image-3.png ' %}" alt="feed" class="post-img">
+
+
+                    <div class="post-row">
+                        <div class="activity-icons">
+                            <div> <img src="{% static 'home/images/like-blue.png ' %}" alt="like-blue">120</div>
+                            <div> <img src="{% static 'home/images/comments.png ' %}" alt="like-blue">145</div>
+                            <div> <img src="{% static 'home/images/share.png ' %}" alt="like-blue">20</div>
+
+                        </div>
+                        <div class="post-profile-icon">
+                            <img src="{% static 'home/images/profile-pic.png ' %}" alt="profile"><i class="fas fa-caret-down"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        
+    </div>
+</form>
+   
+
+    {% endblock %}
